@@ -104,7 +104,7 @@ export default function Simulation() {
                     {result && (
                         <div className="mt-6 bg-white p-4 shadow rounded">
                             <h3 className="font-bold mb-2">Results</h3>
-                            <p>Profit: ₹{result.profit}</p>
+                            <p>Profit: ₹{Math.round(result.profit)}</p>
                             <p>Efficiency: {result.efficiency.toFixed(2)}%</p>
                             <p>On Time Deliveries: {result.onTime}</p>
                             <p>Late Deliveries: {result.late}</p>

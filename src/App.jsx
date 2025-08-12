@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Simulation from "./pages/Simulation";
+import Drivers from "./pages/driver";
+import Orders from "./pages/Order";
+import RoutesPage from "./pages/Routes";
 // import Dashboard from "./pages/Dashboard";
 // import Simulation from "./pages/Simulation";
 // import Drivers from "./pages/Drivers";
@@ -35,11 +38,19 @@ export default function App() {
                             </PrivateRoute>
                         }
                     />
-                    {/* <Route
+                    <Route
                         path="/drivers"
                         element={
                             <PrivateRoute>
                                 <Drivers />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/orders"
+                        element={
+                            <PrivateRoute>
+                                <Orders />
                             </PrivateRoute>
                         }
                     />
@@ -51,14 +62,7 @@ export default function App() {
                             </PrivateRoute>
                         }
                     />
-                    <Route
-                        path="/orders"
-                        element={
-                            <PrivateRoute>
-                                <Orders />
-                            </PrivateRoute>
-                        }
-                    /> */}
+                    
                 </Routes>
             </div>
         </BrowserRouter>

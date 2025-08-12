@@ -9,9 +9,9 @@ export default function Sidebar() {
             <Link to="/simulation" className="block p-2 hover:bg-gray-200 rounded">
                 Simulation
             </Link>
-            {/* <Link to="/drivers" className="block p-2 hover:bg-gray-200 rounded">Drivers</Link>
-      <Link to="/routes" className="block p-2 hover:bg-gray-200 rounded">Routes</Link>
-      <Link to="/orders" className="block p-2 hover:bg-gray-200 rounded">Orders</Link> */}
+            <Link to="/drivers" className="block p-2 hover:bg-gray-200 rounded">Drivers</Link>
+            <Link to="/orders" className="block p-2 hover:bg-gray-200 rounded">Orders</Link>
+            <Link to="/routes" className="block p-2 hover:bg-gray-200 rounded">Routes</Link>
         </div>
     );
 }
