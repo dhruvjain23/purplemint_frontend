@@ -5,11 +5,7 @@ import Simulation from "./pages/Simulation";
 import Drivers from "./pages/driver";
 import Orders from "./pages/Order";
 import RoutesPage from "./pages/Routes";
-// import Dashboard from "./pages/Dashboard";
-// import Simulation from "./pages/Simulation";
-// import Drivers from "./pages/Drivers";
-// import RoutesPage from "./pages/Routes";
-// import Orders from "./pages/Orders";
+
 
 function PrivateRoute({ children }) {
     const token = localStorage.getItem("token");
