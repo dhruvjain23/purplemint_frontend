@@ -26,7 +26,6 @@ export default function Login() {
                 throw new Error(data.message || "Login failed");
             }
 
-            // Assuming the API returns a token
             localStorage.setItem("token", data.token);
             window.location.href = "/dashboard";
         } catch (err) {
@@ -38,9 +37,22 @@ export default function Login() {
 
     return (
         <div className="flex items-center justify-center h-screen bg-green-100 w-full">
-            <form className="bg-white p-6 rounded shadow w-96" onSubmit={handleLogin}>
+            <form className="bg-amber-900 p-6 rounded shadow w-96" onSubmit={handleLogin}>
                 <h2 className="text-xl font-bold mb-4">Manager Login</h2>
+
+                {/* Light mode message */}
+                <p className="text-yellow-200 mb-2 text-sm">
+                    ⚠️ Please open in light mode for better view
+                </p>
+
+                {/* Default credentials */}
+                <p className="text-green-200 mb-4 text-sm">
+                    <strong>Username:</strong> admin<br />
+                    <strong>Password:</strong> password
+                </p>
+
                 {error && <p className="text-red-500 mb-3">{error}</p>}
+
                 <input
                     type="text"
                     placeholder="Username"
@@ -57,7 +69,10 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={isLoading}
                 />
-                <button className="bg-green-600 text-white w-full py-2 rounded disabled:opacity-50" disabled={isLoading}>
+                <button
+                    className="bg-green-600 text-white w-full py-2 rounded disabled:opacity-50"
+                    disabled={isLoading}
+                >
                     {isLoading ? "Logging in..." : "Login"}
                 </button>
             </form>

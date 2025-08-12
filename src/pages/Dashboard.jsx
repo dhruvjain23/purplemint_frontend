@@ -14,16 +14,16 @@ export default function Dashboard() {
     ];
 
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
             <Navbar />
-            <div className="flex w-full ">
+            <div className="flex w-full">
                 <Sidebar />
                 <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 w-2/3 overflow-hidden">
-                    <div className="bg-white p-4 rounded shadow">
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">
                         <h2 className="font-bold">Total Profit</h2>
                         <p className="text-2xl">₹25,000</p>
                     </div>
-                    <div className="bg-white p-4 rounded shadow">
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">
                         <h2 className="font-bold">Efficiency Score</h2>
                         <p className="text-2xl">85%</p>
                     </div>

@@ -19,7 +19,7 @@ export default function Simulation() {
         try {
             const payload = {
                 num_drivers: Number(drivers),
-                start_time: startTime, // keep HH:MM format
+                start_time: startTime,
                 max_hours: Number(maxHours),
             };
 
@@ -60,7 +60,7 @@ export default function Simulation() {
     };
 
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen">
             <Navbar />
             <div className="flex flex-1 w-full">
                 <Sidebar />
@@ -74,26 +74,26 @@ export default function Simulation() {
                             type="number"
                             value={drivers}
                             onChange={(e) => setDrivers(e.target.value)}
-                            className="border p-2 rounded"
+                            className="border border-gray-300 dark:border-gray-700 p-2 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                             placeholder="Number of Drivers"
                         />
                         <input
                             type="time"
                             value={startTime}
                             onChange={(e) => setStartTime(e.target.value)}
-                            className="border p-2 rounded"
+                            className="border border-gray-300 dark:border-gray-700 p-2 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                         />
                         <input
                             type="number"
                             value={maxHours}
                             onChange={(e) => setMaxHours(e.target.value)}
-                            className="border p-2 rounded"
+                            className="border border-gray-300 dark:border-gray-700 p-2 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                             placeholder="Max Hours/Day"
                         />
                         <button
                             type="submit"
                             disabled={loading}
-                            className="bg-green-600 text-white py-2 rounded col-span-1 md:col-span-3"
+                            className="bg-green-600 hover:bg-green-700 text-white py-2 rounded col-span-1 md:col-span-3"
                         >
                             {loading ? "Running..." : "Run Simulation"}
                         </button>
@@ -102,7 +102,7 @@ export default function Simulation() {
                     {error && <p className="text-red-500 mt-4">{error}</p>}
 
                     {result && (
-                        <div className="mt-6 bg-white p-4 shadow rounded">
+                        <div className="mt-6 bg-white dark:bg-gray-800 p-4 shadow rounded border border-gray-200 dark:border-gray-700">
                             <h3 className="font-bold mb-2">Results</h3>
                             <p>Profit: ₹{Math.round(result.profit)}</p>
                             <p>Efficiency: {result.efficiency.toFixed(2)}%</p>

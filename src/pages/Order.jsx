@@ -106,19 +106,19 @@ export default function Orders() {
   };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
       <Navbar />
       <div className="flex w-full">
         <Sidebar />
         <div className="p-4 w-2/3 overflow-hidden">
           <h1 className="text-2xl font-bold mb-4">Manage Orders</h1>
-          <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow mb-4 flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 p-4 rounded shadow mb-4 flex flex-col gap-4">
             <input
               type="number"
               placeholder="Order ID"
               value={formData.order_id}
               onChange={(e) => setFormData({ ...formData, order_id: e.target.value })}
-              className="border p-2 rounded"
+              className="border p-2 rounded bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
               required
             />
             <input
@@ -126,7 +126,7 @@ export default function Orders() {
               placeholder="Value (₹)"
               value={formData.value_rs}
               onChange={(e) => setFormData({ ...formData, value_rs: e.target.value })}
-              className="border p-2 rounded"
+              className="border p-2 rounded bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
               required
             />
             <input
@@ -134,7 +134,7 @@ export default function Orders() {
               placeholder="Route ID"
               value={formData.route_id}
               onChange={(e) => setFormData({ ...formData, route_id: e.target.value })}
-              className="border p-2 rounded"
+              className="border p-2 rounded bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
               required
             />
             <input
@@ -142,17 +142,17 @@ export default function Orders() {
               placeholder="Delivery Time (HH:MM)"
               value={formData.delivery_time}
               onChange={(e) => setFormData({ ...formData, delivery_time: e.target.value })}
-              className="border p-2 rounded"
+              className="border p-2 rounded bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
               required
             />
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+            <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">
               {editingId ? "Update Order" : "Add Order"}
             </button>
           </form>
-          <div className="bg-white p-4 rounded shadow overflow-x-auto">
+          <div className="bg-white dark:bg-gray-800 p-4 rounded shadow overflow-x-auto">
             <table className="w-full table-auto">
               <thead>
-                <tr className="bg-gray-200">
+                <tr className="bg-gray-200 dark:bg-gray-700">
                   <th className="p-2 text-left">Order ID</th>
                   <th className="p-2 text-left">Value (₹)</th>
                   <th className="p-2 text-left">Route ID</th>
@@ -162,7 +162,7 @@ export default function Orders() {
               </thead>
               <tbody>
                 {orders.map((order) => (
-                  <tr key={order._id} className="border-b">
+                  <tr key={order._id} className="border-b dark:border-gray-600">
                     <td className="p-2">{order.order_id}</td>
                     <td className="p-2">{order.value_rs}</td>
                     <td className="p-2">{order.route_id}</td>
@@ -170,13 +170,13 @@ export default function Orders() {
                     <td className="p-2 flex gap-2">
                       <button
                         onClick={() => handleEdit(order)}
-                        className="bg-yellow-500 text-white p-1 rounded"
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white p-1 rounded"
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDelete(order._id)}
-                        className="bg-red-500 text-white p-1 rounded"
+                        className="bg-red-500 hover:bg-red-600 text-white p-1 rounded"
                       >
                         Delete
                       </button>
