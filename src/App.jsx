@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Simulation from "./pages/Simulation";
-import Drivers from "./pages/driver";
+import Drivers from "./pages/Driver";
 import Orders from "./pages/Order";
 import RoutesPage from "./pages/Routes";
 
